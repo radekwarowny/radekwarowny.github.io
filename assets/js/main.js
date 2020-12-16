@@ -4,6 +4,45 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+// Random text
+
+var textarray = ["Hoping This Works", "Learning A New Language", "Blaming the Architecture", "Writing Code that Nobody Else Can Read", "Coding on the Weekend", "Losing My Will To Live", "Trying Stuff Untill it Works", "Googling the Error Message",
+  "Rationalising My Awful Hackjob", "Getting it to Work", "Implementing Dumb Features", "Blaming the User", "Changing Stuff and Seeing What Happens", "Making Excuses for Not Writing Documentation", "Deleting Code", "Turning Coffee Into Code", 
+  "Hoping Nobody Hacks Me", "Ignoring Deprecation Warnings", "Copying and Pasting from Stack Overflow", "Getting an Arduino LED to Blink", "Taking on Needless Dependencies", "Pretending to Know About Stuff", "Hoping that it is Good Enough to Shp", 
+  "Hating on Languages I Don't Use", "Forgetting How My Own Code Works", "Procrastinating", "Making Exuses for Not Writing Unit Tests", "Using Regex by Trial and Error"];
+
+function RndText() 
+{
+    var rannum = Math.floor(Math.random() * textarray.length);
+    
+    $('#random_text').fadeOut(800, function() { 
+        $(this).text(textarray[rannum]).fadeIn(800);
+    });
+}
+
+$(function() {
+    // Call the random function when the DOM is ready:
+    RndText(); 
+});
+var inter = setInterval(function() { RndText(); }, 3000);
+
+// Changing text 
+
+$(function () {
+  count = 0;
+  wordsArray = ["Hoping This Works", "Learning A New Language", "Blaming the Architecture", "Writing Code that Nobody Else Can Read", "Coding on the Weekend", "Losing My Will To Live", "Trying Stuff Untill it Works", "Googling the Error Message",
+  "Rationalising My Awful Hackjob", "Getting it to Work", "Implementing Dumb Features", "Blaming the User", "Changing Stuff and Seeing What Happens", "Making Excuses for Not Writing Documentation", "Deleting Code", "Turning Coffee Into Code", 
+  "Hoping Nobody Hacks Me", "Ignoring Deprecation Warnings", "Copying and Pasting from Stack Overflow", "Getting an Arduino LED to Blink", "Taking on Needless Dependencies", "Pretending to Know About Stuff", "Hoping that it is Good Enough to Shp", 
+  "Hating on Languages I Don't Use", "Forgetting How My Own Code Works", "Procrastinating", "Making Exuses for Not Writing Unit Tests", "Using Regex by Trial and Error"];
+  setInterval(function () {
+    var rannum = Math.floor(Math.random() * textarray.length);
+    count++;
+    $("#word").fadeOut(800, function () {
+      $(this).text(wordsArray[rannum]).fadeIn(800);
+    });
+  }, 6000);
+});
+
 (function($) {
 
 	var $window = $(window),
